@@ -12,12 +12,10 @@ import { useState } from 'react';
 
 const NewSubjectForm = ({ handleCloseModal }) => {
   const [name, setName] = useState('');
-  const [lecturer, setLecturer] = useState('');
   const [educationalMethods, setEducationalMethods] = useState('Лекція');
 
   const DATA = {
     name: name,
-    lecturer: lecturer,
     educationalMethods: educationalMethods,
   };
 
@@ -47,7 +45,7 @@ const NewSubjectForm = ({ handleCloseModal }) => {
         mb={4}
         align="center"
       >
-        Додати курс
+        Додати
       </Typography>
       <FormControl sx={{ mb: 2 }} fullWidth>
         <InputLabel id="degree-select-label">Ступінь</InputLabel>
@@ -71,15 +69,7 @@ const NewSubjectForm = ({ handleCloseModal }) => {
         onChange={(e) => setName(e.target.value)}
         name="name"
         fullWidth
-        label="Назва предмету"
-      />
-      <TextField
-        sx={{ mb: 2 }}
-        value={lecturer}
-        onChange={(e) => setLecturer(e.target.value)}
-        name="lecturer"
-        fullWidth
-        label="ПІБ Викладача"
+        label="Назва лекції/лаборатоної"
       />
       <LoadingButton
         onClick={() => handleSubmitAddNewCourseForm(DATA)}

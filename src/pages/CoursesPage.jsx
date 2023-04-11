@@ -19,7 +19,7 @@ const CoursesPage = () => {
           spacing={3}
           sx={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: { sm: 'column', md: 'row' },
             justifyContent: 'space-between',
             alignItems: 'center',
             py: 4,

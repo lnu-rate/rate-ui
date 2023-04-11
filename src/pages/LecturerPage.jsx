@@ -19,7 +19,6 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { LoadingButton } from '@mui/lab';
 import BackButton from '../components/buttons/BackButton';
-import CommentList from '../components/comments/CommentList';
 import LecturerPageComments from '../components/comments/LecturerPageComments';
 
 const LecturerPage = () => {

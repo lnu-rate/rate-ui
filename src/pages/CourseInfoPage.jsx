@@ -25,7 +25,7 @@ const CourseInfoPage = () => {
           spacing={3}
           sx={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: { sm: 'column', md: 'row' },
             justifyContent: 'space-between',
             alignItems: 'center',
             py: 4,
@@ -40,7 +40,7 @@ const CourseInfoPage = () => {
                 variant="contained"
                 onClick={() => setAddNewCourseOpen(true)}
               >
-                Додати курс
+                Додати лекцію/лабораторну
               </Button>
             ))}
         </Stack>
