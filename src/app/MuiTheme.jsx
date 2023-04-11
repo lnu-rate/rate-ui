@@ -10,7 +10,7 @@ export const theme = createTheme({
 			main: "#16a085",
 			light: "rgb(68, 179, 157)",
 			dark: "rgb(15, 112, 93)",
-			contrastText: "rgba(81,80,79,255)",
+			contrastText: "rgba(55,55,55,1)",
 		},
 	},
 	components: {
@@ -26,6 +26,16 @@ export const theme = createTheme({
 				root: {
 					textDecoration: "none",
 				},
+			},
+		},
+		MuiButton: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					width: "fit-content",
+					padding: "10px 20px",
+					borderRadius: 12,
+					boxShadow: "none",
+				}),
 			},
 		},
 	},
