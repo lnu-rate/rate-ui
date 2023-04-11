@@ -1,7 +1,9 @@
 /** @format */
 
+import MuiTheme from "./MuiTheme";
+
 const App = () => {
-	return <></>;
+	return <MuiTheme></MuiTheme>;
 };
 
 export default App;
