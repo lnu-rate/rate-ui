@@ -3,6 +3,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import {
 	COURSES_ROUTE,
+	COURSE_INFO_ROUTE,
 	DEFAULT_ROUTE,
 	FULL_WIDTH_ROUTE,
 	LOGIN_ROUTE,
@@ -13,6 +14,7 @@ import FullWidthLayout from "../layouts/FullWidthLayout";
 import NotFoundRoute from "../routes/NotFoundRoute";
 import LoginRoute from "../routes/LoginRoute";
 import CoursesRoute from "../routes/CoursesRoute";
+import CourseInfoRoute from "../routes/CourseInfoRoute";
 
 const Router = () => {
 	return (
@@ -32,8 +34,9 @@ const Router = () => {
 				<Route path={COURSES_ROUTE} element={<CoursesRoute />} />
 				<Route
 					index
-					element={<Navigate to={COURSES_ROUTE} replace />}
+					element={<Navigate to={COURSE_INFO_ROUTE} replace />}
 				/>
+				<Route path={COURSE_INFO_ROUTE} element={<CourseInfoRoute />} />
 			</Route>
 		</Routes>
 	);

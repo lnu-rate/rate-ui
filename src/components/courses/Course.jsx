@@ -11,9 +11,9 @@ const Course = ({ course }) => {
 			to={`${COURSES_ROUTE}/${course.id}`}
 			sx={{
 				width: "fit-content",
-				color: (theme) => theme.palette.primary.dark,
-				":hover": {
-					opacity: "0.8",
+				color: "primary.dark",
+				"&:hover": {
+					color: "primary.main",
 				},
 			}}>
 			<Typography variant="h6">{course.name}</Typography>
