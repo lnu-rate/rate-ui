@@ -1,9 +1,13 @@
 /** @format */
 
+import LectionDialog from "../../dialogs/LectionDialog";
+
 export const CourseInfoLections = [
 	{
 		id: 1,
 		name: "Лекція 1",
+		opensDialog: true,
+		getDialog: (props) => <LectionDialog {...props} />,
 	},
 	{
 		id: 2,
