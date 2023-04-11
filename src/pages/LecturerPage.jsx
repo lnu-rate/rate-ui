@@ -19,6 +19,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 import { LoadingButton } from '@mui/lab';
 import BackButton from '../components/buttons/BackButton';
+import LecturerPageComments from '../components/comments/LecturerPageComments';
 
 const LecturerPage = () => {
   let { id } = useParams();
@@ -104,8 +105,8 @@ const LecturerPage = () => {
             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
               <Typography variant="h7" sx={{ fontWeight: 700 }}>
                 Оцініть основні результати викладання дисципліни за 10 бальною
-                шкалою за такими критеріями: якість викладання, методичне
-                забезпечення та об’єктивність оцінювання.
+                шкалою за такими критеріями: якість викладання (Я), методичне
+                забезпечення (М) та об’єктивність оцінювання (О).
               </Typography>
               <Typography
                 variant="h7"
@@ -217,6 +218,7 @@ const LecturerPage = () => {
           }}
         >
           <Typography variant="h5">Оцінки та коментарі</Typography>
+          <LecturerPageComments />
         </Stack>
       </StyledStack>
     </>
