@@ -25,9 +25,14 @@ const LoginForm = () => {
 
 	const onSubmit = async (data) => {
 		setLoading(true);
+		console.log(JSON.stringify(data));
 		try {
 			let myObj = await axios
-				.post("http://localhost:8080/login", JSON.stringify(data))
+				.post("http://localhost:8080/login", JSON.stringify(data), {
+					headers: {
+						"Content-Type": "application/json",
+					},
+				})
 				.catch((err) => console.log(err.response.data));
 			console.log(myObj);
 
