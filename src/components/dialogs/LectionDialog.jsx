@@ -8,6 +8,7 @@ import { IconButton, Typography } from "@mui/material";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import { Stack } from "@mui/system";
 import StyledStack from "../styled/StyledStack";
+import CommentList from "../comments/CommentList";
 
 const LectionDialog = ({ lection, open, onClose }) => {
 	const onDialogClose = () => {
@@ -31,7 +32,9 @@ const LectionDialog = ({ lection, open, onClose }) => {
 				</DialogTitle>
 				<DialogContent sx={{ p: 0 }}>
 					<Stack spacing={0} sx={{ p: 4 }}>
-						<Typography>Lecturer:</Typography>
+						<Stack>
+							<CommentList />
+						</Stack>
 					</Stack>
 				</DialogContent>
 				<DialogActions sx={{ py: 1.5, px: 0 }}>
