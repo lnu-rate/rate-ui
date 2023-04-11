@@ -33,7 +33,7 @@ export const Comments = [
 			id: 3,
 			name: "Ярослав Васьків",
 			username: "yaroslavvaskiv",
-			src: avatar,
+			src: "",
 		},
 	},
 ];
