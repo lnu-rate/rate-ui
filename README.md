@@ -1,3 +1,20 @@
+# RateApp
+
+At the moment, there is no clear way to evaluate educational disciplines and the quality of their teaching. And it basically consists in conveying impressions about the subject from the headman to one of the representatives of the administration in oral form, or filling out an excel table where you evaluate several parameters that do not give a clear picture of the entire subject. And very often all this does not even reach the students. RATE offers a complex solution for this problems. Check it out to see more!
+
+## Team
+
+Product owner: Ivan Franko National University of Lviv
+
+Developers:
+  * Sofiia Tymechko
+  * Vadym Liashok
+  * Yaroslav Vaskiv
+  
+## Tech stack
+  * React + Mui
+  * Java + Spring
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
