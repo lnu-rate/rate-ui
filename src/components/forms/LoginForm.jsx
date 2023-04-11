@@ -1,122 +1,124 @@
 /** @format */
 
-import { Checkbox, FormControlLabel, Stack } from "@mui/material";
-import LoadingButton from "@mui/lab/LoadingButton";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import StyledTextField from "../styled/StyledTextField";
+import { Checkbox, FormControlLabel, Stack } from '@mui/material';
+import LoadingButton from '@mui/lab/LoadingButton';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import StyledTextField from '../styled/StyledTextField';
 // import { LoginService } from "../../services/LoginService";
-import axios from "axios";
+import axios from 'axios';
 
 const LoginForm = () => {
-	const {
-		register,
-		handleSubmit,
-		setError,
-		formState: { errors },
-	} = useForm({ mode: "onBlur" });
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+  } = useForm({ mode: 'onBlur' });
 
-	const [isChecked, setIsChecked] = useState(false);
-	const [loading, setLoading] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-	const handleChange = () => {
-		setIsChecked(!isChecked);
-	};
+  const handleChange = () => {
+    setIsChecked(!isChecked);
+  };
 
-	const onSubmit = async (data) => {
-		setLoading(true);
-		console.log(JSON.stringify(data));
-		try {
-			let myObj = await axios
-				.post("http://localhost:8080/login", JSON.stringify(data), {
-					headers: {
-						"Content-Type": "application/json",
-					},
-				})
-				.catch((err) => console.log(err.response.data));
-			console.log(myObj);
+  const onSubmit = async (data) => {
+    setLoading(true);
+    console.log(JSON.stringify(data));
+    try {
+      let myObj = await axios
+        .post('http://localhost:8080/login', JSON.stringify(data), {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .catch((err) => console.log(err.response.data));
+      console.log(myObj);
 
-			// let res = await LoginService(data);
-			// console.log(res);
-			// localStorage.setItem("role", res.role);
-			// res = null;
+      // let res = await LoginService(data);
+      // console.log(res);
+      // localStorage.setItem("role", res.role);
+      // res = null;
 
-			setLoading(false);
-		} catch {
-			setError("password", {
-				type: "invalidPassword",
-				message: "Credentials are incorrect",
-			});
-			setLoading(false);
-		}
-	};
+      setLoading(false);
+    } catch {
+      setError('password', {
+        type: 'invalidPassword',
+        message: 'Credentials are incorrect',
+      });
+      setLoading(false);
+    }
+  };
 
-	return (
-		<Stack
-			component="form"
-			onSubmit={handleSubmit(onSubmit)}
-			justifyContent="center"
-			spacing={3}
-			sx={{ p: 8 }}>
-			<StyledTextField
-				label="Login"
-				register={{
-					...register("login", {
-						required: {
-							value: true,
-							message: "The field is required!",
-						},
-						maxLength: {
-							value: 30,
-							message: "30 characters maximum",
-						},
-					}),
-				}}
-				helperText={errors?.login ? errors.login.message : " "}
-				error={!!errors?.login}
-			/>
-			<StyledTextField
-				label="Password"
-				type="password"
-				register={{
-					...register("password", {
-						required: {
-							value: true,
-							message: "The field is required!",
-						},
-						minLength: {
-							value: 8,
-							message: "Input 8 characters minimum",
-						},
-						maxLength: {
-							value: 20,
-							message: "Input 20 characters maximum",
-						},
-					}),
-				}}
-				helperText={errors?.password ? errors.password.message : " "}
-				error={!!errors?.password}
-			/>
-			<FormControlLabel
-				control={
-					<Checkbox
-						onChange={handleChange}
-						disableRipple
-						sx={{ p: 0, pr: 1 }}
-						{...register("rememberMe", { rememberMe: isChecked })}
-					/>
-				}
-				label="Remember me"
-			/>
-			<LoadingButton
-				loading={loading}
-				type="submit"
-				variant="contained"
-				sx={{ width: "100%" }}>
-				Login
-			</LoadingButton>
-		</Stack>
-	);
+  return (
+    <Stack
+      component="form"
+      onSubmit={handleSubmit(onSubmit)}
+      justifyContent="center"
+      spacing={3}
+      sx={{ p: 8 }}
+    >
+      <StyledTextField
+        label="Login"
+        register={{
+          ...register('login', {
+            required: {
+              value: true,
+              message: 'The field is required!',
+            },
+            maxLength: {
+              value: 30,
+              message: '30 characters maximum',
+            },
+          }),
+        }}
+        helperText={errors?.login ? errors.login.message : ' '}
+        error={!!errors?.login}
+      />
+      <StyledTextField
+        label="Password"
+        type="password"
+        register={{
+          ...register('password', {
+            required: {
+              value: true,
+              message: 'The field is required!',
+            },
+            minLength: {
+              value: 8,
+              message: 'Input 8 characters minimum',
+            },
+            maxLength: {
+              value: 20,
+              message: 'Input 20 characters maximum',
+            },
+          }),
+        }}
+        helperText={errors?.password ? errors.password.message : ' '}
+        error={!!errors?.password}
+      />
+      <FormControlLabel
+        control={
+          <Checkbox
+            onChange={handleChange}
+            disableRipple
+            sx={{ p: 0, pr: 1 }}
+            {...register('rememberMe', { rememberMe: isChecked })}
+          />
+        }
+        label="Remember me"
+      />
+      <LoadingButton
+        loading={loading}
+        type="submit"
+        variant="contained"
+        sx={{ width: '100%' }}
+      >
+        Login
+      </LoadingButton>
+    </Stack>
+  );
 };
 
 export default LoginForm;
