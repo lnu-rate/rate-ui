@@ -3,6 +3,7 @@
 import { Stack, Typography } from "@mui/material";
 import StyledStack from "../components/styled/StyledStack";
 import CourseInfoLabList from "../components/coursesInfo/labs/CourseInfoLabList";
+import CourseInfoLectionList from "../components/coursesInfo/lections/CourseInfoLectionList";
 
 const CourseInfoPage = () => {
 	// let { id } = useParams();
@@ -20,6 +21,7 @@ const CourseInfoPage = () => {
 				}}>
 				<Typography variant="h4">Назва курсу</Typography>
 			</Stack>
+			<CourseInfoLectionList />
 			<CourseInfoLabList />
 		</StyledStack>
 	);

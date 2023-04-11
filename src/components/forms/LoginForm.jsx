@@ -72,7 +72,7 @@ const LoginForm = () => {
 			/>
 			<StyledTextField
 				label="Password"
-				// type="password"
+				type="password"
 				register={{
 					...register("password", {
 						required: {
