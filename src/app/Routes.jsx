@@ -7,7 +7,7 @@ export const REGISTER_ROUTE = "/register";
 
 export const FULL_WIDTH_ROUTE = "/";
 
-export const MY_COURSES_ROUTE = "/courses";
+export const COURSES_ROUTE = "/courses";
 export const COURSE_ROUTE = "/courses/:id";
 
 export const LECTURERS_ROUTE = "/lecturers";
