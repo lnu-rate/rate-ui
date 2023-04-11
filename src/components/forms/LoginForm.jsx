@@ -5,6 +5,8 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import StyledTextField from "../styled/StyledTextField";
+// import { LoginService } from "../../services/LoginService";
+import axios from "axios";
 
 const LoginForm = () => {
 	const {
@@ -23,8 +25,17 @@ const LoginForm = () => {
 
 	const onSubmit = async (data) => {
 		setLoading(true);
-		console.log(data);
 		try {
+			let myObj = await axios
+				.post("http://localhost:8080/login", JSON.stringify(data))
+				.catch((err) => console.log(err.response.data));
+			console.log(myObj);
+
+			// let res = await LoginService(data);
+			// console.log(res);
+			// localStorage.setItem("role", res.role);
+			// res = null;
+
 			setLoading(false);
 		} catch {
 			setError("password", {
