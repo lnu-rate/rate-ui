@@ -10,6 +10,7 @@ import {
   LECTURER_ROUTE,
   LOGIN_ROUTE,
   PAGE_NOT_FOUND_ROUTE,
+  PROFILE_ROUTE,
 } from './Routes';
 import DefaultLayout from '../layouts/DefaultLayout';
 import FullWidthLayout from '../layouts/FullWidthLayout';
@@ -19,6 +20,7 @@ import CoursesRoute from '../routes/CoursesRoute';
 import CourseInfoRoute from '../routes/CourseInfoRoute';
 import LecturersRoute from '../routes/LecturersRoute';
 import LecturerRoute from '../routes/LecturerRoute';
+import ProfileRoute from '../routes/ProfileRoute';
 
 const Router = () => {
   return (
@@ -37,6 +39,7 @@ const Router = () => {
         <Route path={COURSE_INFO_ROUTE} element={<CourseInfoRoute />} />
         <Route path={LECTURERS_ROUTE} element={<LecturersRoute />} />
         <Route path={LECTURER_ROUTE} element={<LecturerRoute />} />
+        <Route path={PROFILE_ROUTE} element={<ProfileRoute />} />
       </Route>
     </Routes>
   );
