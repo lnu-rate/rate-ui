@@ -21,7 +21,7 @@ import { Logout, Settings } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
 import RegisterForm from "../forms/RegisterForm";
 
-const USER_NAME = "Вадим Машина";
+const USER_NAME = "Софія Тимечко";
 
 const Header = () => {
 	const [anchorElNav, setAnchorElNav] = useState(null);
