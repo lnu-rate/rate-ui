@@ -33,7 +33,7 @@ const LoginForm = () => {
     // console.log(JSON.stringify(data));
     try {
       let res = await LoginService(data);
-      console.log(res);
+      // console.log(res);
       localStorage.setItem('role', res.role);
       localStorage.setItem('name', res.name);
       localStorage.setItem('id', res.id);

@@ -16,12 +16,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import LogoImage from '../../assets/images/LogoImage';
-import {
-  LECTURERS_ROUTE,
-  COURSES_ROUTE,
-  PROFILE_ROUTE,
-  LOGIN_ROUTE,
-} from '../../app/Routes';
+import { LECTURERS_ROUTE, COURSES_ROUTE, LOGIN_ROUTE } from '../../app/Routes';
 import { Logout, Settings } from '@mui/icons-material';
 import PersonIcon from '@mui/icons-material/Person';
 import RegisterForm from '../forms/RegisterForm';
