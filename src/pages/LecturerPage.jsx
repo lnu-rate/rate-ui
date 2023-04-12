@@ -134,13 +134,13 @@ const LecturerPage = () => {
 							}}>
 							<FormControl sx={{ width: "30%" }}>
 								<InputLabel id="quality-select-label">
-									Якість оцінювання
+									Якість викладання
 								</InputLabel>
 								<Select
 									labelId="quality-select-label"
 									id="quality-select"
 									value={quality}
-									label="Якість оцінювання"
+									label="Якість викладання"
 									onChange={(e) => setQuality(e.target.value)}
 									sx={{
 										borderRadius: 2,

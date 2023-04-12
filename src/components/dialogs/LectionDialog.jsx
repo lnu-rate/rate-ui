@@ -27,7 +27,7 @@ const LectionDialog = ({ lection, open, onClose }) => {
 							borderBottom: "1px solid rgba(0,0,0,.125)",
 							p: 6,
 						}}>
-						<Typography variant="h6">лекція</Typography>
+						<Typography variant="h6">Лекція 1</Typography>
 						<Typography variant="h4">
 							DFD модель побудови
 						</Typography>
