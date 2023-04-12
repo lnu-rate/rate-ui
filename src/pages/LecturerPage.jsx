@@ -156,13 +156,13 @@ const LecturerPage = () => {
 							</FormControl>
 							<FormControl sx={{ width: "30%" }}>
 								<InputLabel id="methodological-support-select-label">
-									Методичне забеспечення
+									Методичне забезпечення
 								</InputLabel>
 								<Select
 									labelId="methodological-support-select-label"
 									id="methodological-support-select"
 									value={methodologicalSupport}
-									label="Методичне забеспечення"
+									label="Методичне забезпечення"
 									onChange={(e) =>
 										setMethodologicalSupport(e.target.value)
 									}
