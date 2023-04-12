@@ -6,7 +6,6 @@ import { Link, useParams } from 'react-router-dom';
 import { Avatar, Box, Typography } from '@mui/material';
 import { getUser } from '../components/user/getUser';
 import { LECTURER_ROLE } from '../data/userRoles';
-import avatar from '../assets/images/user/avatar.png';
 
 const ProfilePage = () => {
   let { id } = useParams();
@@ -29,7 +28,7 @@ const ProfilePage = () => {
         <Avatar
           alt="avatar"
           variant="circular"
-          src={avatar}
+          src={USER_DATA.image || ''}
           sx={{
             width: 124,
             height: 124,

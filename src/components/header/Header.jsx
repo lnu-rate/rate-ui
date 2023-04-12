@@ -20,13 +20,12 @@ import {
   LECTURERS_ROUTE,
   COURSES_ROUTE,
   PROFILE_ROUTE,
+  LOGIN_ROUTE,
 } from '../../app/Routes';
 import { Logout, Settings } from '@mui/icons-material';
 import PersonIcon from '@mui/icons-material/Person';
 import RegisterForm from '../forms/RegisterForm';
 import { ADMIN_ROLE } from '../../data/userRoles';
-
-const USER_NAME = 'Вадим Машина';
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -34,10 +33,13 @@ const Header = () => {
   const [isRegisterModalOpen, setRegisterOpenModal] = useState(false);
 
   const USER_ROLE = localStorage.getItem('role');
+  const USER_NAME = localStorage.getItem('name');
+  const USER_ID = localStorage.getItem('id');
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -218,7 +220,7 @@ const Header = () => {
                       >
                         <Link
                           component={RouterLink}
-                          to={'/profile/1'}
+                          to={`/profile/${USER_ID}`}
                           textAlign="center"
                           sx={{ display: 'flex', gap: 1 }}
                         >
@@ -238,7 +240,14 @@ const Header = () => {
                   <ListItemIcon>
                     <Logout fontSize="small" />
                   </ListItemIcon>
-                  Вийти
+                  <Link
+                    component={RouterLink}
+                    to={LOGIN_ROUTE}
+                    textAlign="center"
+                    sx={{ color: 'black' }}
+                  >
+                    Вийти
+                  </Link>
                 </MenuItem>
               </Menu>
             </Box>
