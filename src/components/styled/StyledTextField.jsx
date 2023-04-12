@@ -9,6 +9,8 @@ const StyledTextField = ({
 	helperText,
 	register,
 	error,
+	onChangeValue,
+	value,
 }) => {
 	return (
 		<TextField
@@ -17,6 +19,8 @@ const StyledTextField = ({
 			label={label}
 			placeholder={placeholder}
 			helperText={helperText}
+			onChange={(value) => onChangeValue(value)}
+			value={value}
 			{...register}
 			error={error}
 			sx={{
