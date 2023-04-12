@@ -1,19 +1,19 @@
 /** @format */
 
-import { Box, Button, Modal, Stack, Typography } from '@mui/material';
-import StyledStack from '../components/styled/StyledStack';
-import CourseInfoLabList from '../components/coursesInfo/labs/CourseInfoLabList';
-import CourseInfoLectionList from '../components/coursesInfo/lections/CourseInfoLectionList';
-import BackButton from '../components/buttons/BackButton';
-import { ADMIN_ROLE, LECTURER_ROLE } from '../data/userRoles';
-import { useState } from 'react';
-import NewSubjectForm from '../components/forms/NewSubjectForm';
+import { Box, Button, Modal, Stack, Typography } from "@mui/material";
+import StyledStack from "../components/styled/StyledStack";
+import CourseInfoLabList from "../components/coursesInfo/labs/CourseInfoLabList";
+import CourseInfoLectionList from "../components/coursesInfo/lections/CourseInfoLectionList";
+import BackButton from "../components/buttons/BackButton";
+import { ADMIN_ROLE, LECTURER_ROLE } from "../data/userRoles";
+import { useState } from "react";
+import NewSubjectForm from "../components/forms/NewSubjectForm";
 
 const CourseInfoPage = () => {
-  // let { id } = useParams();
-  // const COURSE_DATA = getLecturer(id);
-  // id = null;
-  const [isAddNewCourseOpen, setAddNewCourseOpen] = useState(false);
+	// let { id } = useParams();
+	// const COURSE_DATA = getLecturer(id);
+	// id = null;
+	const [isAddNewCourseOpen, setAddNewCourseOpen] = useState(false);
 
   const USER_ROLE = localStorage.getItem('role');
 

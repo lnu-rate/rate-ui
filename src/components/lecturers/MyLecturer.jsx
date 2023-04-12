@@ -42,7 +42,7 @@ const MyLecturer = ({ lecturer }) => {
 						opacity: "0.8",
 					},
 				}}>
-				<Typography variant="h6">{lecturer.email}</Typography>
+				<Typography variant="p">{lecturer.email}</Typography>
 			</Link>
 		</Box>
 	);
