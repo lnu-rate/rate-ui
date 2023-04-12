@@ -21,9 +21,6 @@ const RegisterForm = ({ handleCloseModal }) => {
   // console.log(errors);
 
   const [role, setRole] = useState('student');
-  const [faculty, setFaculty] = useState(
-    'Електроніки та компютерних технологій'
-  );
   const [stream, setStream] = useState('ФеІ');
   const [degree, setDegree] = useState('Доцент');
   const [department, setDepartment] = useState(
@@ -32,10 +29,6 @@ const RegisterForm = ({ handleCloseModal }) => {
 
   const handleChangeRole = (event) => {
     setRole(event.target.value);
-  };
-
-  const handleChangeFaculty = (event) => {
-    setFaculty(event.target.value);
   };
 
   const handleChangeStream = (event) => {
@@ -51,7 +44,7 @@ const RegisterForm = ({ handleCloseModal }) => {
   };
 
   const handleSubmitRegisterForm = (data) => {
-    console.log({ role: role, faculty: faculty, data });
+    console.log({ role: role, data });
     handleCloseModal();
   };
 
@@ -94,26 +87,6 @@ const RegisterForm = ({ handleCloseModal }) => {
         >
           <MenuItem value="student">Студент</MenuItem>
           <MenuItem value="lecturer">Лектор</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl sx={{ mt: 2 }} fullWidth>
-        <InputLabel id="faculty-select-label">Факультет</InputLabel>
-        <Select
-          labelId="faculty-select-label"
-          id="faculty-select"
-          value={faculty}
-          label="Факультет"
-          onChange={handleChangeFaculty}
-          sx={{
-            borderRadius: 2,
-          }}
-        >
-          <MenuItem value="Електроніки та компютерних технологій">
-            Електроніки та компютерних технологій
-          </MenuItem>
-          <MenuItem value="Прикладної математики">
-            Прикладної математики
-          </MenuItem>
         </Select>
       </FormControl>
       <TextField
