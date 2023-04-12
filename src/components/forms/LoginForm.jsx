@@ -35,7 +35,10 @@ const LoginForm = () => {
         })
         .catch((err) => console.log(err.response.data));
       console.log(myObj);
-
+      await axios
+        .get('http://localhost:8080/loginSuccess')
+        .then((res) => console.log(res));
+      // console.log(loginSuccess);
       // let res = await LoginService(data);
       // console.log(res);
       // localStorage.setItem("role", res.role);
