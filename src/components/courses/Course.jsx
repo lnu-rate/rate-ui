@@ -16,7 +16,7 @@ const Course = ({ course }) => {
 					color: "primary.main",
 				},
 			}}>
-			<Typography variant="h6">{course.name}</Typography>
+			<Typography variant="p">{course.name}</Typography>
 		</Link>
 	);
 };

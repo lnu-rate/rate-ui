@@ -6,17 +6,16 @@ import CourseInfoLab from "./CourseInfoLab";
 
 const CourseInfoLabList = () => {
 	return (
-		<Stack>
-			<Stack
-				spacing={3}
-				sx={{
-					p: 8,
-				}}>
-				<Typography variant="h5">Лабораторні</Typography>
-				{CoursesInfoLabs.map((lab, id) => (
-					<CourseInfoLab lab={lab} key={id} />
-				))}
-			</Stack>
+		<Stack
+			spacing={3}
+			sx={{
+				py: 4,
+				px: 8,
+			}}>
+			<Typography variant="h5">Лабораторні</Typography>
+			{CoursesInfoLabs.map((lab, id) => (
+				<CourseInfoLab lab={lab} key={id} />
+			))}
 		</Stack>
 	);
 };
