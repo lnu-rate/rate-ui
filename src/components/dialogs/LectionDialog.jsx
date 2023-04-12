@@ -16,13 +16,16 @@ const LectionDialog = ({ lection, open, onClose }) => {
 	};
 
 	return (
-		<Dialog open={open} onClose={onDialogClose}>
-			<StyledStack>
+		<Dialog
+			open={open}
+			onClose={onDialogClose}
+			sx={{ width: "100%", maxWidth: "100%" }}>
+			<StyledStack sx={{ m: 0 }}>
 				<DialogTitle sx={{ p: 0 }}>
 					<Stack
 						sx={{
 							borderBottom: "1px solid rgba(0,0,0,.125)",
-							p: 4,
+							p: 6,
 						}}>
 						<Typography variant="h6">лекція</Typography>
 						<Typography variant="h4">
@@ -31,7 +34,7 @@ const LectionDialog = ({ lection, open, onClose }) => {
 					</Stack>
 				</DialogTitle>
 				<DialogContent sx={{ p: 0 }}>
-					<Stack spacing={0} sx={{ p: 4 }}>
+					<Stack spacing={0} sx={{ p: 6 }}>
 						<Stack>
 							<CommentList />
 						</Stack>

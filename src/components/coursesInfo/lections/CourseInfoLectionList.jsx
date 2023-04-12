@@ -13,22 +13,16 @@ const CourseInfoLectionList = () => {
 	};
 
 	return (
-		<Stack>
-			<Stack
-				spacing={3}
-				sx={{
-					p: 8,
-				}}>
-				<Typography variant="h5">Лекції</Typography>
-				{CourseInfoLections.map((lection, id) => (
-					<CourseInfoLection
-						lection={lection}
-						key={id}
-						open={open}
-						onClose={handleClose}
-					/>
-				))}
-			</Stack>
+		<Stack spacing={3} sx={{ py: 4, px: 8 }}>
+			<Typography variant="h5">Лекції</Typography>
+			{CourseInfoLections.map((lection, id) => (
+				<CourseInfoLection
+					lection={lection}
+					key={id}
+					open={open}
+					onClose={handleClose}
+				/>
+			))}
 		</Stack>
 	);
 };
