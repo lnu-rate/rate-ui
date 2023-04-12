@@ -16,10 +16,15 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import LogoImage from "../../assets/images/LogoImage";
-import { LECTURERS_ROUTE, COURSES_ROUTE } from "../../app/Routes";
+import {
+	LECTURERS_ROUTE,
+	COURSES_ROUTE,
+	PROFILE_ROUTE,
+} from "../../app/Routes";
 import { Logout, Settings } from "@mui/icons-material";
 import PersonIcon from "@mui/icons-material/Person";
 import RegisterForm from "../forms/RegisterForm";
+import { ADMIN_ROLE } from "../../data/userRoles";
 
 const USER_NAME = "Софія Тимечко";
 
@@ -27,6 +32,8 @@ const Header = () => {
 	const [anchorElNav, setAnchorElNav] = useState(null);
 	const [anchorElUser, setAnchorElUser] = useState(null);
 	const [isRegisterModalOpen, setRegisterOpenModal] = useState(false);
+
+	const USER_ROLE = localStorage.getItem("role");
 
 	const handleOpenNavMenu = (event) => {
 		setAnchorElNav(event.currentTarget);
@@ -171,7 +178,8 @@ const Header = () => {
 									sx={{ p: 0 }}>
 									<Typography
 										color="primary"
-										variant="subtitle1"
+										variant="h6"
+										fontWeight="semi-bold"
 										sx={{
 											mr: 2,
 											display: { xs: "none", md: "flex" },
@@ -196,13 +204,26 @@ const Header = () => {
 								}}
 								open={Boolean(anchorElUser)}
 								onClose={handleCloseUserMenu}>
-								<MenuItem
-									sx={{ display: "flex", gap: 1 }}
-									onClick={handleCloseUserMenu}>
-									<PersonIcon color="primary" />
-									Особистий кабінет
-								</MenuItem>
-								<Divider />
+								{USER_ROLE === ADMIN_ROLE
+									? null
+									: [
+											<MenuItem
+												key="menu-item-profile"
+												onClick={handleCloseUserMenu}>
+												<Link
+													component={RouterLink}
+													to={"/profile/1"}
+													textAlign="center"
+													sx={{
+														display: "flex",
+														gap: 1,
+													}}>
+													<PersonIcon color="primary" />
+													Особистий кабінет
+												</Link>
+											</MenuItem>,
+											<Divider key="menu-item-divider" />,
+									  ]}
 								<MenuItem onClick={handleCloseUserMenu}>
 									<ListItemIcon>
 										<Settings fontSize="small" />
