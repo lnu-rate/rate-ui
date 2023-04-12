@@ -1,6 +1,11 @@
 /** @format */
 
-import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
+import {
+	createTheme,
+	ThemeProvider,
+	CssBaseline,
+	responsiveFontSizes,
+} from "@mui/material";
 import * as React from "react";
 
 export const theme = createTheme({
@@ -38,12 +43,26 @@ export const theme = createTheme({
 				}),
 			},
 		},
+		MuiDialog: {
+			styleOverrides: {
+				root: ({ theme }) => ({
+					"& .MuiPaper-root": {
+						maxWidth: "100%",
+						width: "800px",
+					},
+				}),
+			},
+		},
 	},
 });
 
 const MuiTheme = ({ children }) => {
 	return (
-		<ThemeProvider theme={theme}>
+		<ThemeProvider
+			theme={responsiveFontSizes(theme, {
+				breakpoints: ["xs", "sm", "md", "lg"],
+				factor: 5,
+			})}>
 			<CssBaseline />
 			{children}
 		</ThemeProvider>
