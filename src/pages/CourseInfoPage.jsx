@@ -15,7 +15,7 @@ const CourseInfoPage = () => {
   // id = null;
   const [isAddNewCourseOpen, setAddNewCourseOpen] = useState(false);
 
-  const USER_ROLE = 'lecturer';
+  const USER_ROLE = localStorage.getItem('role');
 
   return (
     <>
@@ -34,15 +34,14 @@ const CourseInfoPage = () => {
           }}
         >
           <Typography variant="h4">Управління ІТ проектами</Typography>
-          {USER_ROLE === ADMIN_ROLE ||
-            (USER_ROLE === LECTURER_ROLE && (
-              <Button
-                variant="contained"
-                onClick={() => setAddNewCourseOpen(true)}
-              >
-                Додати лекцію/лабораторну
-              </Button>
-            ))}
+          {(USER_ROLE === ADMIN_ROLE || USER_ROLE === LECTURER_ROLE) && (
+            <Button
+              variant="contained"
+              onClick={() => setAddNewCourseOpen(true)}
+            >
+              Додати лекцію/лабораторну
+            </Button>
+          )}
         </Stack>
         <CourseInfoLectionList />
         <CourseInfoLabList />
