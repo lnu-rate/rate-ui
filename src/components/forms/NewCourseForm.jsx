@@ -1,18 +1,19 @@
 import { LoadingButton } from '@mui/lab';
 import { Box, TextField, Typography } from '@mui/material';
 import { useState } from 'react';
+import { Courses } from '../courses/Courses';
 
 const NewCourseForm = ({ handleCloseModal }) => {
   const [name, setName] = useState('');
   const [lecturer, setLecturer] = useState('');
 
-  const DATA = {
-    name: name,
-    lecturer: lecturer,
-  };
+  // const DATA = {
+  //   name: name,
+  //   lecturer: lecturer,
+  // };
 
   const handleSubmitAddNewCourseForm = (data) => {
-    console.log(data);
+    Courses.push({ id: Courses.length, name });
     handleCloseModal();
   };
 
@@ -56,11 +57,11 @@ const NewCourseForm = ({ handleCloseModal }) => {
         label="ПІБ Викладача"
       />
       <LoadingButton
-        onClick={() => handleSubmitAddNewCourseForm(DATA)}
+        onClick={() => handleSubmitAddNewCourseForm()}
         variant="contained"
-        sx={{ width: '40%', display: 'block', mx: 'auto' }}
+        sx={{ width: '40%', display: 'block', mx: 'auto', color: 'white' }}
       >
-        Register
+        Готово
       </LoadingButton>
     </Box>
   );

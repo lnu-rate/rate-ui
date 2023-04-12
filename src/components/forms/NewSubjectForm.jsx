@@ -9,6 +9,8 @@ import {
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
+import { CoursesInfoLabs } from '../coursesInfo/labs/CoursesInfoLabs';
+import { CourseInfoLections } from '../coursesInfo/lections/CourseInfoLections';
 
 const NewSubjectForm = ({ handleCloseModal }) => {
   const [name, setName] = useState('');
@@ -20,7 +22,12 @@ const NewSubjectForm = ({ handleCloseModal }) => {
   };
 
   const handleSubmitAddNewCourseForm = (data) => {
-    console.log(data);
+    if (educationalMethods === 'Лабораторна') {
+      CoursesInfoLabs.push({ id: CoursesInfoLabs.length, name: name });
+    }
+    if (educationalMethods === 'Лекція') {
+      CourseInfoLections.push({ id: CourseInfoLections.length, name: name });
+    }
     handleCloseModal();
   };
 
@@ -53,7 +60,7 @@ const NewSubjectForm = ({ handleCloseModal }) => {
           labelId="degree-select-label"
           id="degree-select"
           value={educationalMethods}
-          label="Ступінь"
+          label="Тип"
           onChange={(e) => setEducationalMethods(e.target.value)}
           sx={{
             borderRadius: 2,
@@ -74,9 +81,9 @@ const NewSubjectForm = ({ handleCloseModal }) => {
       <LoadingButton
         onClick={() => handleSubmitAddNewCourseForm(DATA)}
         variant="contained"
-        sx={{ width: '40%', display: 'block', mx: 'auto' }}
+        sx={{ width: '40%', display: 'block', mx: 'auto', color: 'white' }}
       >
-        Register
+        Готово
       </LoadingButton>
     </Box>
   );
