@@ -8,6 +8,7 @@ import StyledTextField from '../styled/StyledTextField';
 import { LoginService } from '../../services/LoginService';
 import { useNavigate } from 'react-router-dom';
 import { COURSES_ROUTE } from '../../app/Routes';
+import axios from 'axios';
 // import { getUser } from '../user/getUser';
 // import axios from 'axios';
 
@@ -32,12 +33,22 @@ const LoginForm = () => {
     setLoading(true);
     // console.log(JSON.stringify(data));
     try {
-      let res = await LoginService(data);
+      let myObj = await axios
+        .post('http://localhost:8080/login', JSON.stringify(data), {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+        .catch((err) => console.log(err.response.data));
+      console.log(myObj);
+      await axios
+        .get('http://localhost:8080/loginSuccess')
+        .then((res) => console.log(res));
+      // console.log(loginSuccess);
+      // let res = await LoginService(data);
       // console.log(res);
-      localStorage.setItem('role', res.role);
-      localStorage.setItem('name', res.name);
-      localStorage.setItem('id', res.id);
-      res = null;
+      // localStorage.setItem("role", res.role);
+      // res = null;
 
       setLoading(false);
       navigate(COURSES_ROUTE, { replace: true });
