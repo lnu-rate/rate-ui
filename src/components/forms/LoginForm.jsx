@@ -1,5 +1,3 @@
-/** @format */
-
 import { Checkbox, FormControlLabel, Stack } from '@mui/material';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useForm } from 'react-hook-form';
@@ -40,10 +38,16 @@ const LoginForm = () => {
           },
         })
         .catch((err) => console.log(err.response.data));
-      console.log(myObj);
+      const JWT = myObj?.data?.token;
+      console.log(JWT);
       await axios
-        .get('http://localhost:8080/loginSuccess')
-        .then((res) => console.log(res));
+        .post('http://localhost:8080/success', null, {
+          headers: {
+            'Authorization': `Bearer ${JWT}`,
+          },
+        })
+        .then((res) => console.log(res))
+        .catch((err) => console.log(err.response.data));
       // console.log(loginSuccess);
       // let res = await LoginService(data);
       // console.log(res);
@@ -51,7 +55,7 @@ const LoginForm = () => {
       // res = null;
 
       setLoading(false);
-      navigate(COURSES_ROUTE, { replace: true });
+      // navigate(COURSES_ROUTE, { replace: true });
     } catch {
       setError('password', {
         type: 'invalidPassword',
@@ -91,18 +95,18 @@ const LoginForm = () => {
         type="password"
         register={{
           ...register('password', {
-            required: {
-              value: true,
-              message: 'The field is required!',
-            },
-            minLength: {
-              value: 8,
-              message: 'Input 8 characters minimum',
-            },
-            maxLength: {
-              value: 20,
-              message: 'Input 20 characters maximum',
-            },
+            // required: {
+            //   value: true,
+            //   message: 'The field is required!',
+            // },
+            // minLength: {
+            //   value: 8,
+            //   message: 'Input 8 characters minimum',
+            // },
+            // maxLength: {
+            //   value: 20,
+            //   message: 'Input 20 characters maximum',
+            // },
           }),
         }}
         helperText={errors?.password ? errors.password.message : ' '}
