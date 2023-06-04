@@ -3,12 +3,10 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import StyledTextField from '../styled/StyledTextField';
-import { LoginService } from '../../services/LoginService';
 import { useNavigate } from 'react-router-dom';
 import { COURSES_ROUTE } from '../../app/Routes';
 import axios from 'axios';
-// import { getUser } from '../user/getUser';
-// import axios from 'axios';
+import { setCookie } from '../../helpers/cookieHelper';
 
 const LoginForm = () => {
   const {
@@ -29,7 +27,7 @@ const LoginForm = () => {
 
   const onSubmit = async (data) => {
     setLoading(true);
-    // console.log(JSON.stringify(data));
+
     try {
       let myObj = await axios
         .post('http://localhost:8080/login', JSON.stringify(data), {
@@ -38,24 +36,29 @@ const LoginForm = () => {
           },
         })
         .catch((err) => console.log(err.response.data));
-      const JWT = myObj?.data?.token;
-      console.log(JWT);
+
+      let JWT = myObj?.data?.token;
+      setCookie('jwt', `Bearer ${JWT}`);
+
       await axios
         .post('http://localhost:8080/success', null, {
           headers: {
             'Authorization': `Bearer ${JWT}`,
           },
         })
-        .then((res) => console.log(res))
+        .then((res) => {
+          localStorage.setItem('jwt', `Bearer ${JWT}`);
+          localStorage.setItem('fullName', res.data.fullName);
+          localStorage.setItem('email', res.data.email);
+          localStorage.setItem('login', res.data.login);
+          localStorage.setItem('role', res.data.role);
+        })
         .catch((err) => console.log(err.response.data));
-      // console.log(loginSuccess);
-      // let res = await LoginService(data);
-      // console.log(res);
-      // localStorage.setItem("role", res.role);
-      // res = null;
-
+  
       setLoading(false);
-      // navigate(COURSES_ROUTE, { replace: true });
+      navigate(COURSES_ROUTE, { replace: true });
+
+      JWT = null;
     } catch {
       setError('password', {
         type: 'invalidPassword',

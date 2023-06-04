@@ -28,8 +28,8 @@ const Header = () => {
   const [isRegisterModalOpen, setRegisterOpenModal] = useState(false);
 
   const USER_ROLE = localStorage.getItem('role');
-  const USER_NAME = localStorage.getItem('name');
-  const USER_ID = localStorage.getItem('id');
+  const USER_NAME = localStorage.getItem('fullName');
+  // const USER_ID = localStorage.getItem('id');
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -215,7 +215,7 @@ const Header = () => {
                       >
                         <Link
                           component={RouterLink}
-                          to={`/profile/${USER_ID}`}
+                          // to={`/profile/${USER_ID}`}
                           textAlign="center"
                           sx={{ display: 'flex', gap: 1 }}
                         >
