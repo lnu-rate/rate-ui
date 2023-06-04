@@ -1,5 +1,6 @@
 /** @format */
 
+// TODO: Remove dummy component
 export const Courses = [
   {
     id: 1,

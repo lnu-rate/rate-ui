@@ -23,15 +23,6 @@ const CommentList = () => {
 				},
 			},
 		]);
-		// setComment((comment) => ({
-		// 	...comment,
-		// 	owner: {
-		// 		id: 1,
-		// 		name: "Софія Тимечко",
-		// 		username: "sofiiatymechko",
-		// 		src: avatar,
-		// 	},
-		// }));
 	};
 
 	return (

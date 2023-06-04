@@ -9,7 +9,7 @@ import { LECTURER_ROLE } from '../data/userRoles';
 
 const ProfilePage = () => {
   let { id } = useParams();
-  // console.log(id);
+
   const USER_DATA = getUser(id);
   id = null;
 

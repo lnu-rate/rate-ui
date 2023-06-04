@@ -2,6 +2,7 @@
 
 import LectionDialog from "../../dialogs/LectionDialog";
 
+// TODO: Remove dummy component
 export const CourseInfoLections = [
 	{
 		id: 1,

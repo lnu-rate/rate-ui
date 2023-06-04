@@ -1,3 +1,4 @@
+// TODO: Remove dummy data
 const LECTURERS_LIST = [
   {
     id: '1',

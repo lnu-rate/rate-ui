@@ -29,6 +29,8 @@ const Header = () => {
 
   const USER_ROLE = localStorage.getItem('role');
   const USER_NAME = localStorage.getItem('fullName');
+
+  // TODO: Add ID parameter to make profile page accessible (if we would need)
   // const USER_ID = localStorage.getItem('id');
 
   const handleOpenNavMenu = (event) => {

@@ -18,8 +18,6 @@ const RegisterForm = ({ handleCloseModal }) => {
     formState: { errors },
   } = useForm({ mode: 'onBlur' });
 
-  // console.log(errors);
-
   const [role, setRole] = useState('student');
   const [stream, setStream] = useState('ФеІ');
   const [degree, setDegree] = useState('Доцент');

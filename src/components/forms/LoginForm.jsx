@@ -98,18 +98,18 @@ const LoginForm = () => {
         type="password"
         register={{
           ...register('password', {
-            // required: {
-            //   value: true,
-            //   message: 'The field is required!',
-            // },
-            // minLength: {
-            //   value: 8,
-            //   message: 'Input 8 characters minimum',
-            // },
-            // maxLength: {
-            //   value: 20,
-            //   message: 'Input 20 characters maximum',
-            // },
+            required: {
+              value: true,
+              message: 'The field is required!',
+            },
+            minLength: {
+              value: 8,
+              message: 'Input 8 characters minimum',
+            },
+            maxLength: {
+              value: 20,
+              message: 'Input 20 characters maximum',
+            },
           }),
         }}
         helperText={errors?.password ? errors.password.message : ' '}
