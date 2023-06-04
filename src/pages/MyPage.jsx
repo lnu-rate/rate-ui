@@ -6,9 +6,15 @@ import CoursesList from "../components/courses/CoursesList";
 import { useState } from "react";
 import NewCourseForm from "../components/forms/NewCourseForm";
 import { ADMIN_ROLE } from "../data/userRoles";
+import axios from "axios";
 
-const CoursesPage = () => {
+const MyPage = () => {
 	const [isAddNewCourseOpen, setAddNewCourseOpen] = useState(false);
+
+
+	axios.get('https://localhost:8080/student/my')
+		.then(res => console.log(res))
+		.catch(err => console.error(err));
 
 	const USER_ROLE = localStorage.getItem("role");
 
@@ -55,4 +61,4 @@ const CoursesPage = () => {
 	);
 };
 
-export default CoursesPage;
+export default MyPage;
