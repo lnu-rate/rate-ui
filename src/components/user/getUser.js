@@ -1,5 +1,6 @@
 import avatar from '../../assets/images/user/avatar.png';
 
+// TODO: Remove dummy data
 const USERS = [
   {
     id: '1',

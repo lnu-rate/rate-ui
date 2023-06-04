@@ -7,11 +7,6 @@ const NewCourseForm = ({ handleCloseModal }) => {
   const [name, setName] = useState('');
   const [lecturer, setLecturer] = useState('');
 
-  // const DATA = {
-  //   name: name,
-  //   lecturer: lecturer,
-  // };
-
   const handleSubmitAddNewCourseForm = (data) => {
     Courses.push({ id: Courses.length, name });
     handleCloseModal();

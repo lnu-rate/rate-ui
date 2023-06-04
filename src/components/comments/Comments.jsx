@@ -2,6 +2,7 @@
 import avatar from "../../assets/images/user/avatar.png";
 import test from "../../assets/images/user/test.jpg";
 
+// TODO: Remove dummy component
 export const Comments = [
 	{
 		id: 1,

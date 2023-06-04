@@ -2,6 +2,7 @@
 import avatar from "../../assets/images/avatar.png";
 import test from "../../assets/images/test.jpg";
 
+// TODO: Remove dummy data
 export const Users = [
 	{
 		id: 1,

@@ -10,9 +10,6 @@ import { useState } from 'react';
 import NewSubjectForm from '../components/forms/NewSubjectForm';
 
 const CourseInfoPage = () => {
-  // let { id } = useParams();
-  // const COURSE_DATA = getLecturer(id);
-  // id = null;
   const [isAddNewCourseOpen, setAddNewCourseOpen] = useState(false);
 
   const USER_ROLE = localStorage.getItem('role');

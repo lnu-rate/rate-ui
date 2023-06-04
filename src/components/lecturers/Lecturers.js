@@ -1,3 +1,4 @@
+// TODO: Remove dummy data
 export const DEPARTMENTS = [
   {
     name: 'Кафедра оптоелектроніки та інформаційних технологій',

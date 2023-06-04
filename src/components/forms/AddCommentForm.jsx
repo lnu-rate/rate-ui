@@ -1,6 +1,5 @@
 /** @format */
 
-// import { useForm } from "react-hook-form";
 import { useState } from "react";
 import {
 	Accordion,
@@ -14,67 +13,7 @@ import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 const AddCommentForm = ({ onAdd }) => {
 	const [comment, setComment] = useState({ id: Date.now(), text: "" });
 
-	// const {
-	// 	// register,
-	// 	// handleSubmit,
-	// 	// formState: { errors },
-	// } = useForm({ mode: "onBlur" });
-
-	// const [loading, setLoading] = useState(false);
-
-	// const onSubmit = async (data) => {
-	// 	setLoading(true);
-	// 	try {
-	// 		// console.log(data);
-	// 		onAdd(comment);
-
-	// 		setLoading(false);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 		setLoading(false);
-	// 	}
-	// };
-
 	return (
-		// <Stack
-		// 	// component="form"
-		// 	// onSubmit={(e) => {
-		// 	// 	handleSubmit(onSubmit)(e);
-		// 	// }}
-		// 	justifyContent="center"
-		// 	spacing={2}>
-		// 	<StyledTextField
-		// 		onChangeValue={(e) =>
-		// 			setComment((prevComment) => ({
-		// 				...prevComment,
-		// 				description: e.target.value,
-		// 			}))
-		// 		}
-		// 		label="Add comment"
-		// 		register={{
-		// 			...register("text", {
-		// 				required: {
-		// 					value: true,
-		// 					message: "The field is required!",
-		// 				},
-		// 				minLength: {
-		// 					value: 20,
-		// 					message: "20 characters minimum",
-		// 				},
-		// 			}),
-		// 		}}
-		// 		helperText={errors?.text ? errors.text.message : " "}
-		// 		error={!!errors?.text}
-		// 	/>
-		// 	<LoadingButton
-		// 		loading={loading}
-		// 		// type="submit"
-		// 		variant="contained"
-		// 		onClick={() => onAdd(comment)}
-		// 		sx={{ alignSelf: "end" }}>
-		// 		Post
-		// 	</LoadingButton>
-		// </Stack>
 		<Accordion
 			elevation={0}
 			expanded={true}
