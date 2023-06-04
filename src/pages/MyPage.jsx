@@ -11,8 +11,11 @@ import axios from "axios";
 const MyPage = () => {
 	const [isAddNewCourseOpen, setAddNewCourseOpen] = useState(false);
 
-
-	axios.get('https://localhost:8080/student/my')
+	axios.get('http://localhost:8080/student/my', {
+		headers: {
+			'Authorization': localStorage.getItem("jwt"),
+		},
+	})
 		.then(res => console.log(res))
 		.catch(err => console.error(err));
 
